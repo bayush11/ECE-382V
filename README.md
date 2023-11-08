@@ -41,3 +41,25 @@ The category network relative to NOD flaky tests has been defined to mean a flak
     }
 ```
 The test above is an example of a NOD test that is flaky due to network errors. The reason being is that there is a GET request to an external API and asserting that the response code is HTTP 200 (OK). With that in mind though, network flakiness can occur if there are timeouts or network connectivity problems.
+
+# Concurrency
+
+The category concurrency relative to NOD flaky tests has been defined to mean tests that are flaky because of potential shared states between tests like accessing the same database or network, tests that deal with different type of race conditions, or deadlocks. These factors, when invoked in tests or source code, allow for concurrneyc issues in tests, allowing for flakiness to occur as well. A more clear example could be 
+
+```bash
+private static int sharedCounter = 0;
+
+    @Test
+    public void testIncrementCounter() {
+        sharedCounter++;
+        // This assertion could fail if this test runs concurrently with other tests that modify sharedCounter
+        assertEquals(1, sharedCounter);
+    }
+
+    @Test
+    public void anotherTestThatIncrementsCounter() {
+        sharedCounter++;
+        // This assertion could also fail if this test runs at the same time as the above test
+        assertEquals(1, sharedCounter);
+    }
+```
