@@ -7,3 +7,8 @@
 | AbstractQueryTest.java | 41 | Not Specified -- Environment Differences | https://github.com/querydsl/querydsl/pull/2658 | Source |
 | count | No Line | Not Specified -- Environment Cleanup | https://github.com/querydsl/querydsl/blob/master/querydsl-hibernate-search/src/test/java/com/querydsl/hibernate/search/SearchQueryTest.java | Test |
 | list | No Line | Not Specified -- Environment Cleanup | https://github.com/querydsl/querydsl/blob/master/querydsl-hibernate-search/src/test/java/com/querydsl/hibernate/search/SearchQueryTest.java | Test |
+| listResults | No Line | Not Specified -- Environment Cleanup | https://github.com/querydsl/querydsl/blob/master/querydsl-hibernate-search/src/test/java/com/querydsl/hibernate/search/SearchQueryTest.java | Test |
+| no_where | No Line | Not Specified -- Environment Cleanup | https://github.com/querydsl/querydsl/blob/master/querydsl-hibernate-search/src/test/java/com/querydsl/hibernate/search/SearchQueryTest.java | Test |
+| ordering | No Line | Not Specified -- Environment Cleanup | https://github.com/querydsl/querydsl/blob/master/querydsl-hibernate-search/src/test/java/com/querydsl/hibernate/search/SearchQueryTest.java | Test |
+| paging | No Line | Not Specified -- Environment Cleanup | https://github.com/querydsl/querydsl/blob/master/querydsl-hibernate-search/src/test/java/com/querydsl/hibernate/search/SearchQueryTest.java | Test |
+| AbstractQueryTest.java | 41 | Not Specified -- Environment Differences | https://github.com/querydsl/querydsl/pull/2658 | Source |
