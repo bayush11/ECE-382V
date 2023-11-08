@@ -44,7 +44,7 @@ The test above is an example of a NOD test that is flaky due to network errors. 
 
 # Concurrency
 
-The category concurrency relative to NOD flaky tests has been defined to mean tests that are flaky because of potential shared states between tests like accessing the same database or network, tests that deal with different type of race conditions, or deadlocks. These factors, when invoked in tests or source code, allow for concurrneyc issues in tests, allowing for flakiness to occur as well. A more clear example could be 
+The category concurrency relative to NOD flaky tests has been defined to mean tests that are flaky because of potential shared states between tests like accessing the same database or network, tests that deal with different types of race conditions, or deadlocks. These factors, when invoked in tests or source code, allow for concurrency issues in tests, resulting in flakiness to occur as well. A clearer example could be where two variables are being accessed concurrently in two different threads. This allows for race conditions to apply, creating flakiness associating to concurrency. An example is shown below.
 
 ```bash
 private static int sharedCounter = 0;
@@ -63,3 +63,9 @@ private static int sharedCounter = 0;
         assertEquals(1, sharedCounter);
     }
 ```
+
+In the example shown, the tests are both checking the value of sharedCounter, which is a static variable. The issue of concurrency arises though from the fact that two different threads are accessing the static variable. Doing this opens the possibility of concurrency issues happening, which will then make the test flaky because of a concurrency problem.
+
+# Timing
+
+The category timing is a category that can have multiple meanings. The context in which timing will be used in this repository will be in relation to asynchronous operations. In other words, when a flaky test or source code suffers from timing, that means that some iterations or functions within the code could pass or fail depending soley on the time that the asynchronous method will take. An
