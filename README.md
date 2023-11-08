@@ -10,7 +10,7 @@ To solve this question, I will be conducting an empirical study that looks into 
 
 # Randomness
 
-The category randomness relative to NOD flaky tests has been defined to mean a lack of promised order in which iterations or operations can happen. In other words, when looking at different executions of the same code, we expect an iteration or operation to have the same order; randomness in NOD flaky tests takes this away and introduces randomness in these iterations and operations from execution to execution. One example is a data structure that has a randomized iteration order. Another example is shown and explained below.
+The category randomness relative to NOD flaky tests has been defined to mean a lack of promised order in which iterations or operations can happen. In other words, when looking at different executions of the same code, we expect an iteration or operation to have the same order; randomness in NOD flaky tests takes this away and introduces randomness in these iterations and operations from execution to execution. One example is a data structure that has a randomized iteration order. This example is shown and explained below.
 
 ```bash
 @Test
