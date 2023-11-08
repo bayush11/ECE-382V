@@ -22,4 +22,4 @@ The category randomness relative to NOD flaky tests has been defined to mean a l
         assertTrue(output.equals("messagekey1=value1||key2=value2") || output.equals("messagekey2=value2||key1=value1"));
     }
 ```
-The above test is a NOD flaky test that exibhits randomness. The reason being is because of the non-deterministic ordering of the elements within the ConcurrentHashMap when the toString() method is called. Since the order of the elemnets within that data structure is not garunteed, converting it to a String will alwasy give it different outputs, leading to the NOD flaky resaon being randomness.
+The above test is a NOD flaky test that exhibits randomness. The reason being is because of the non-deterministic ordering of the elements within the ConcurrentHashMap when the toString() method is called. Since the order of the elements within that data structure is not guaranteed, converting it to a String will always give it different outputs, leading to the NOD flaky reason being randomness.
