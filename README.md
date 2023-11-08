@@ -66,7 +66,7 @@ In the example shown, the tests are comparing the value of the static variable s
 
 # Timing
 
-The category timing is a category that can have multiple meanings. The context in which timing will be used in this repository will be about asynchronous operations. In other words, when a flaky test or source code suffers from timing, that means that some iterations or functions within the code could pass or fail depending solely on the time that the asynchronous method will take. An example is when an asynchronous operation takes a variable amount of time which takes longer than a specified timeout. This will result in flakiness relating to timing. An example of this is shown below.
+The category timing is a category that can have multiple meanings. The context in which timing will be used in this repository will be about asynchronous timing. In other words, when a flaky test or source code has problems from timing, that means that there is a dependency on the asynchornous function to work properly, or have a consistent timing. The timing, however, will no talwaus be the same and so a deviation from what is expected can allow the test to pass or fail, creating flakiness. An example is when there is a specific timeout that is given and there is also a dependency on a asynchornous operation. As stated before though, the asynchorunous operation will not always take a consistent time, creating a unsteable pass ro fail for the test. An example of this is shown below.
 
 ```bash
 @Test(timeout = 5000)
@@ -76,4 +76,4 @@ The category timing is a category that can have multiple meanings. The context i
   }
 ```
 
-In this example, the timeout is set to 5000 milliseconds, but the testProtocolRejection creates a variable time. In other words, the time could be longer or shorter than the specified timeout, so in the times when the time is greater than the specified timeout, there is a timing error, creating flakiness that is related to this factor.
+In this example, the timeout is set to 5000 milliseconds, but the testProtocolRejection is a asynchonous operation that takes a variable amount of time depending on the execution. In other words, the time could be longer or shorter than the specified timeout, so in the times when the time is greater than the specified timeout, the test will fail, creating flakiness.
