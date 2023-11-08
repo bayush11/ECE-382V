@@ -62,7 +62,7 @@ private static int sharedCounter = 0;
     }
 ```
 
-In the example shown, the tests are both checking the value of sharedCounter, which is a static variable. The issue of concurrency arises though from the fact that two different threads are accessing the static variable. Doing this opens the possibility of concurrency issues happening, which will then make the test flaky because of a concurrency problem.
+In the example shown, the tests are comparing the value of the static variable sharedCounter to a constant 1. The issue of concurrency arises though from the fact that two different threads are accessing the static variable. Doing this opens the possibility of concurrency issues happening, which will then make the test flaky because of a concurrency problem.
 
 # Timing
 
