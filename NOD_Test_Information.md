@@ -11,4 +11,15 @@
 | no_where | No Line | Not Specified -- Environment Cleanup | https://github.com/querydsl/querydsl/blob/master/querydsl-hibernate-search/src/test/java/com/querydsl/hibernate/search/SearchQueryTest.java | Test |
 | ordering | No Line | Not Specified -- Environment Cleanup | https://github.com/querydsl/querydsl/blob/master/querydsl-hibernate-search/src/test/java/com/querydsl/hibernate/search/SearchQueryTest.java | Test |
 | paging | No Line | Not Specified -- Environment Cleanup | https://github.com/querydsl/querydsl/blob/master/querydsl-hibernate-search/src/test/java/com/querydsl/hibernate/search/SearchQueryTest.java | Test |
-| AbstractQueryTest.java | 41 | Not Specified -- Environment Differences | https://github.com/querydsl/querydsl/pull/2658 | Source |
+| testHandshakeRejectionTestCase2 | 289 | Timing | https://github.com/TestingResearchIllinois/idoft/issues/22 | Test |
+| testHandshakeRejectionTestCase3 | 294 | Timing | https://github.com/TestingResearchIllinois/idoft/issues/22 | Test |
+| testHandshakeRejectionTestCase4 | 299 | Timing | https://github.com/TestingResearchIllinois/idoft/issues/22 | Test |
+| testHandshakeRejectionTestCase6 | 310 | Timing | https://github.com/TestingResearchIllinois/idoft/issues/22 | Test |
+| testHandshakeRejectionTestCase8 | 322 | Timing | https://github.com/TestingResearchIllinois/idoft/issues/22 | Test |
+| testHandshakeRejectionTestCase9 | 328 | Timing | https://github.com/TestingResearchIllinois/idoft/issues/22 | Test |
+| testHandshakeRejectionTestCase10 | 334 | Timing | https://github.com/TestingResearchIllinois/idoft/issues/22 | Test |
+| testHandshakeRejectionTestCase11 | 340 | Timing | https://github.com/TestingResearchIllinois/idoft/issues/22 | Test |
+| testHandshakeRejectionTestCase13 | 346 | Timing | https://github.com/TestingResearchIllinois/idoft/issues/22 | Test |
+| testHandshakeRejectionTestCase14 | 361 | Timing | https://github.com/TestingResearchIllinois/idoft/issues/22 | Test |
+| testHandshakeRejectionTestCase16 | 377 | Timing | https://github.com/TestingResearchIllinois/idoft/issues/22 | Test |
+| testHandshakeRejectionTestCase17 | 385 | Timing | https://github.com/TestingResearchIllinois/idoft/issues/22 | Test |
