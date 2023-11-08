@@ -23,3 +23,21 @@ The category randomness relative to NOD flaky tests has been defined to mean a l
     }
 ```
 The above test is a NOD flaky test that exhibits randomness. The reason being is because of the non-deterministic ordering of the elements within the ConcurrentHashMap when the toString() method is called. Since the order of the elements within that data structure is not guaranteed, converting it to a String will always give it different outputs, leading to the NOD flaky reason being randomness.
+
+# Network
+
+The category network relative to NOD flaky tests has been defined to mean a flaky test that depends on unpredictable network connections or any unreliable external web services. To be more precise, network issues in an NOD flaky test means that the flaky test in particular has some dependence on an external network that is sometimes working and sometimes not. This instability causes for the test to become NOD flaky relative to network issues. An example of this is an unstable API call that a test makes. An example is shown and explained below.
+
+```bash
+@Test
+    public void whenCallingApi_thenSuccess() throws IOException {
+        URL url = new URL("http://api.example.com/resource");
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        connection.setRequestMethod("GET");
+        connection.connect();
+
+        int responseCode = connection.getResponseCode();
+        assertTrue(responseCode == 200, "API did not respond with 200 OK");
+    }
+```
+The test above is an example of a NOD test that is flaky due to network errors. The reason being is that there is a GET request to an external API and asserting that the response code is HTTP 200 (OK). With that in mind though, network flakiness can occur if there are timeouts or network connectivity problems.
