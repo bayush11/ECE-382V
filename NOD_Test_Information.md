@@ -6,3 +6,4 @@
 | FileReaderWriterFactoryTest.java | No Line | Not Specified -- Environment Setup Error | https://github.com/querydsl/querydsl/blob/master/querydsl-hibernate-search/src/test/java/com/querydsl/hibernate/search/SearchQueryTest.java | Test |
 | AbstractQueryTest.java | 41 | Not Specified -- Environment Differences | https://github.com/querydsl/querydsl/pull/2658 | Source |
 | count | No Line | Not Specified -- Environment Cleanup | https://github.com/querydsl/querydsl/blob/master/querydsl-hibernate-search/src/test/java/com/querydsl/hibernate/search/SearchQueryTest.java | Test |
+| list | No Line | Not Specified -- Environment Cleanup | https://github.com/querydsl/querydsl/blob/master/querydsl-hibernate-search/src/test/java/com/querydsl/hibernate/search/SearchQueryTest.java | Test |
