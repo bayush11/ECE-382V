@@ -52,14 +52,12 @@ private static int sharedCounter = 0;
     @Test
     public void testIncrementCounter() {
         sharedCounter++;
-        // This assertion could fail if this test runs concurrently with other tests that modify sharedCounter
         assertEquals(1, sharedCounter);
     }
 
     @Test
     public void anotherTestThatIncrementsCounter() {
         sharedCounter++;
-        // This assertion could also fail if this test runs at the same time as the above test
         assertEquals(1, sharedCounter);
     }
 ```
