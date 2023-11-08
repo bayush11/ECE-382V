@@ -66,7 +66,7 @@ In the example shown, the tests are both checking the value of sharedCounter, wh
 
 # Timing
 
-The category timing is a category that can have multiple meanings. The context in which timing will be used in this repository will be about asynchronous operations. In other words, when a flaky test or source code suffers from timing, that means that some iterations or functions within the code could pass or fail depending solely on the time that the asynchronous method will take. An example is when an asynchronous operation takes a variable amount of time which takes longer than the specified timeout. This will result in flakiness relating to timing. An example of this is shown below.
+The category timing is a category that can have multiple meanings. The context in which timing will be used in this repository will be about asynchronous operations. In other words, when a flaky test or source code suffers from timing, that means that some iterations or functions within the code could pass or fail depending solely on the time that the asynchronous method will take. An example is when an asynchronous operation takes a variable amount of time which takes longer than a specified timeout. This will result in flakiness relating to timing. An example of this is shown below.
 
 ```bash
 @Test(timeout = 5000)
