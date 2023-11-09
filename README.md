@@ -77,3 +77,18 @@ The category timing is a category that can have multiple meanings. The context i
 ```
 
 In this example, the timeout is set to 5000 milliseconds, but the testProtocolRejection is an asynchronous operation that takes a variable amount of time depending on the execution. In other words, the time could be longer or shorter than the specified timeout, so in the times when the time is greater than the specified timeout, the test will fail, creating flakiness.
+
+# Not Specified
+
+The category of not specified is a category that defines a test to not have a reason for flaky failure that is categorized within the four categories of network failure, randomness, timing, and concurrency. I had this category to show that all the tests will not fall into these four categories and although they make up a large majority of the tests, some tests can fail from events like an environment change needed. An example is shown below.
+
+```bash
+@BeforeClass
+    public static void setUpClass() throws IOException {
+        FileUtils.delete(new File("target/derbydb"));
+        FileUtils.delete(new File("target/lucene3"));
+        AnnotationConfiguration cfg = new AnnotationConfiguration();
+        cfg.addAnnotatedClass(User.class);
+        Properties props = new Properties();
+```
+The issue in this test is that at the new File creation of lucene3, the correct file that needs to have been made is lucene. There is the assumption that the interactions will always be with lucene3 but there needs to be a clean-up of the files so that there is a creation to the correct directory. This is an example of a flaky test that does not directly fall into the categories that are mentioned.
