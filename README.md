@@ -13,13 +13,11 @@ To solve this question, I will be conducting an empirical study that looks into 
 The category randomness is relative to NOD flaky tests and has been defined to mean a lack of promised order in which iterations or operations can happen. In other words, when looking at different executions of the same code, we expect an iteration or operation to have the same order; randomness in NOD flaky tests takes this away and introduces randomness in these iterations and operations from execution to execution. One example of where randomness can become a problem within NOD flaky tests is when a data structure has a randomized iteration order, which can create a different structure listing for each execution. This example is shown and explained below.
 
 ```bash
-@Test
-    public void testToStringShouldPrintMessageAndAllKeyAndValuePairs() {
-        logMessage.setMsg(MESSAGE);
-        logMessage.kv("key1", "value1");
-        logMessage.kv("key2", "value2");
-        String output = logMessage.toString();
-        assertTrue(output.equals("messagekey1=value1||key2=value2") || output.equals("messagekey2=value2||key1=value1"));
+private final Random random = new Random();
+    @Test
+    public void testRandomNumberIsAlwaysEven() {
+        int randomNumber = random.nextInt();
+        assertTrue(randomNumber % 2 == 0);  
     }
 ```
 The above test is a NOD flaky test that exhibits randomness. The reason is because of the non-deterministic ordering of the elements within the ConcurrentHashMap when the toString() method is called. Since the order of the elements within that data structure is not guaranteed, converting it to a String will always give it different outputs, leading to the NOD flaky reason being randomness.
