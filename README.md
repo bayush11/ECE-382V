@@ -90,3 +90,7 @@ The category of not specified is a category that defines a test to not have a re
         Properties props = new Properties();
 ```
 The issue in this test is that at the new File creation of lucene3, the correct file that needs to have been made is lucene. There is the assumption that the interactions will always be with lucene3 but there needs to be a clean-up of the files so that there is a creation to the correct directory. This is an example of a flaky test that does not directly fall into the categories that are mentioned.
+
+# Methodology for Finding NOD Flaky Tests
+
+I wanted to provide the method that I am using to find tests through the Idoft repository. There are multiple ways that this can be done and I am finding tests through a specific approach. The way that I first started was to start at the top of Idoft and see what NOD flaky tests exist. From there, I will continue to find repositories present and classify the NOD tests given. If I find 5 tests in a row that are of a certain category (concurrency, timing, randomness, network, or not specified), I will then move 10 repositories forward in idoft and start there again. I believe that this allows for a proper inclusion of all different types of tests. If the scenario of me getting the same type of test again even after I move, then I will move 10 repositions forward again and repeat the process. I still keep track of where I left off for documentation purposes, but I have found this to allow for a high range of NOD flaky tests that are of different categories.
