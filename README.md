@@ -59,13 +59,11 @@ public class ConcurrencyTest {
         thread1.join();
         thread2.join();
 
-        // The assertion might intermittently fail due to a race condition
         assert sharedResource == 200000;
     }
 
     private void increment() {
         for (int i = 0; i < 100000; i++) {
-            // Incrementing shared resource without synchronization
             sharedResource++;
         }
     }
