@@ -45,19 +45,31 @@ The test above is an example of a NOD test that is flaky due to network errors. 
 The category concurrency relative to NOD flaky tests has been defined to mean tests that deal with different types of race conditions and deadlocks. These factors can cause lots of problems as race conditions and deadlock can result in high levels of wait time and unwanted modification of variables between executions. An example could be where a static variable is being accessed concurrently in two different threads. This opens the potential for some executions to have different variable values compared to other executions, creating flakiness. An example is shown below.
 
 ```bash
-private static int sharedCounter = 0;
+public class ConcurrencyTest {
 
-    @Test
-    public void testIncrementCounter() {
-        sharedCounter++;
-        assertEquals(1, sharedCounter);
+    private int sharedResource = 0;
+
+    public void testConcurrencyIssue() throws InterruptedException {
+        Thread thread1 = new Thread(this::increment);
+        Thread thread2 = new Thread(this::increment);
+
+        thread1.start();
+        thread2.start();
+
+        thread1.join();
+        thread2.join();
+
+        // The assertion might intermittently fail due to a race condition
+        assert sharedResource == 200000;
     }
 
-    @Test
-    public void anotherTestThatIncrementsCounter() {
-        sharedCounter++;
-        assertEquals(1, sharedCounter);
+    private void increment() {
+        for (int i = 0; i < 100000; i++) {
+            // Incrementing shared resource without synchronization
+            sharedResource++;
+        }
     }
+}
 ```
 
 In the example shown, the tests are comparing the value of the static variable sharedCounter to a constant 1. The issue of concurrency arises though from the fact that two different threads are accessing the static variable. Doing this opens the possibility of concurrency issues happening, which will then make the test flaky because of a concurrency problem.
