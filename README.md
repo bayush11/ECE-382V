@@ -100,13 +100,26 @@ In this example, the timeout is set to 5000 milliseconds, but the testProtocolRe
 The category of not specified is a category that defines a test to not have a reason for flaky failure that is categorized within the four categories of network failure, randomness, timing, and concurrency. I had this category to show that all the tests will not fall into these four categories and although they make up a large majority of the tests, some tests can fail from events like an environment change needed. An example is shown below.
 
 ```bash
-@BeforeClass
-    public static void setUpClass() throws IOException {
-        FileUtils.delete(new File("target/derbydb"));
-        FileUtils.delete(new File("target/lucene3"));
-        AnnotationConfiguration cfg = new AnnotationConfiguration();
-        cfg.addAnnotatedClass(User.class);
-        Properties props = new Properties();
+import org.junit.Test;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+public class EnvironmentDependentTest {
+
+    @Test
+    public void testFileCreation() throws Exception {
+        Path tempDir = Paths.get(System.getProperty("java.io.tmpdir"));
+        Path testFile = tempDir.resolve("testfile.txt");
+
+        Files.createFile(testFile);
+        boolean fileExists = Files.exists(testFile);
+        Files.deleteIfExists(testFile);
+
+        assert fileExists;
+    }
+}
+
 ```
 The issue in this test is that at the new File creation of lucene3, the correct file that needs to have been made is lucene. There is the assumption that the interactions will always be with lucene3 but there needs to be a clean-up of the files so that there is a creation to the correct directory. This is an example of a flaky test that does not directly fall into the categories that are mentioned.
 
