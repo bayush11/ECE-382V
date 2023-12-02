@@ -51,7 +51,7 @@ The test above is an example of a NOD test that is flaky due to network errors. 
 
 # Concurrency
 
-The category concurrency relative to NOD flaky tests has been defined to mean tests that deal with different types of race conditions and deadlocks. These factors can cause lots of problems as race conditions and deadlock can result in high levels of wait time and unwanted modification of variables between executions. An example could be where a static variable is being accessed concurrently in two different threads. This opens the potential for some executions to have different variable values compared to other executions, creating flakiness. An example is shown below.
+The category concurrency relative to NOD flaky tests has been defined to mean tests that deal with different types of race conditions and deadlocks. These factors can cause lots of problems as race conditions and deadlock can result in high levels of wait time and unwanted modification of variables between executions. An example could be where a static variable is being accessed concurrently in two different threads. This opens the potential for some executions to have different variable values compared to other executions, creating flakiness. When a test is labled as suffering from Concurrency Issues, a lot of times it is because of shared resources. An example is shown below.
 
 ```bash
 public class ConcurrencyTest {
