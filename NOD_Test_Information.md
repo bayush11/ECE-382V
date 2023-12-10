@@ -57,4 +57,4 @@
 |org.biojava.nbio.structure.align.util.AtomCacheTest.testFetchBehavior | https://github.com/biojava/biojava | e99364ac14294adeb9385b7b93c602c2d9b66bb6 | 233 (testFetchBehavior) | Network Issues | Test|
 |org.biojava.nbio.structure.align.util.AtomCacheTest.testGetStructureForChainlessDomains | https://github.com/biojava/biojava | e99364ac14294adeb9385b7b93c602c2d9b66bb6 | 178 (testGetStructureForChainlessDomains) | Not specified | Test|
 |org.biojava.nbio.structure.align.util.AtomCacheTest.testGetStructureForDomain1 | https://github.com/biojava/biojava | e99364ac14294adeb9385b7b93c602c2d9b66bb6 | 116 (testGetStructureForDomain1) | Not specified | Test|
-|org.biojava.nbio.structure.align.util.AtomCacheTest.testGetStructureForDomain2 | https://github.com/biojava/biojava | e99364ac14294adeb9385b7b93c602c2d9b66bb6 | 116 | (testGetStructureForDomain1) | Not specified | Test|
+|org.biojava.nbio.structure.align.util.AtomCacheTest.testGetStructureForDomain2 | https://github.com/biojava/biojava | e99364ac14294adeb9385b7b93c602c2d9b66bb6 | 116 (testGetStructureForDomain1) | Not specified | Test|
