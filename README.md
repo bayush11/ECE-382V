@@ -6,30 +6,7 @@ In this report, I will cover the project regarding the root cause of NOD flaky t
 
 The project I am working on is to find the root cause of NOD flaky tests. While researchers have been able to find NOD tests through automated techniques that involve rerunning tests many times as well as compiling them into large datasets like Idoft and FlakeFlagger, the root cause of these tests is still unknown. More specifically, the tests that are a part of the large datasets mentioned are known to be flaky, but the underlying reasoning is not clear for why that is. 
 
-To solve this question, I will be conducting an empirical study that looks into these flaky tests and provides reasons and root causes for flakiness. Throughout my research, I have found five main categories into which these NOD flaky tests fall: Randomness, Network, Concurrency, Timing, and Not Specified. I will clarify these categories and provide a few examples below.
-
-# Randomness
-
-The category randomness is relative to NOD flaky tests and has been defined to mean a lack of promised order in which iterations or operations can happen. In other words, when looking at different executions of the same code, we expect an iteration or operation to have the same order; randomness in NOD flaky tests takes this away and introduces randomness in these iterations and operations from execution to execution. One example of where randomness can become a problem within NOD flaky tests is when a data structure has a randomized iteration order, which can create a different structure listing for each execution. This example is shown and explained below.
-
-```bash
-import java.util.Random;
-
-public class RandomnessTest {
-
-    public void testRandomness() {
-        Random rand = new Random();
-        int randomData = rand.nextInt(100) + 1;
-        assert processData(randomData);  
-    }
-
-    private boolean processData(int data) {
-        return data % 2 == 0;
-    }
-}
-
-```
-The above test is a NOD flaky test that exhibits randomness. The reason is because of the non-deterministic ordering of the elements within the ConcurrentHashMap when the toString() method is called. Since the order of the elements within that data structure is not guaranteed, converting it to a String will always give it different outputs, leading to the NOD flaky reason being randomness.
+To solve this question, I will be conducting an empirical study that looks into these flaky tests and provides reasons and root causes for flakiness. Throughout my research, I have found five main categories into which these NOD flaky tests fall: Network, Concurrency, Timing, and Not Specified. I will clarify these categories and provide a few examples below.
 
 # Network
 
@@ -81,9 +58,9 @@ public class ConcurrencyTest {
 
 In the example shown, the tests are comparing the value of the static variable sharedCounter to a constant 1. The issue of concurrency arises though from the fact that two different threads are accessing the static variable. Doing this opens the possibility of concurrency issues happening, which will then make the test flaky because of a concurrency problem.
 
-# Timing
+# Async Timing
 
-The category timing is a category that can have multiple meanings. The context in which timing will be used in this repository will be about asynchronous timing. In other words, when a flaky test or source code has problems with timing, that means that there is a dependency on the asynchronous function to work properly, or have consistent timing. The timing, however, will not always be the same and so a deviation from what is expected can allow the test to pass or fail, creating flakiness. An example is when there is a specific timeout that is given and there is also a dependency on a asynchronous operation. As stated before though, the asynchronous operation will not always take consistent time, creating an unstable pass or fail for the test. An example of this is shown below.
+The flaky test in the category of async timing is a flaky test or source code that has problems with timing, which means that there is a dependency on the asynchronous function to work properly or have consistent timing. The timing, however, will not always be the same and so a deviation from what is expected can allow the test to pass or fail, creating flakiness. An example is when there is a specific timeout that is given and there is also a dependency on a asynchronous operation. As stated before though, the asynchronous operation will not always take consistent time, creating an unstable pass or fail for the test. An example of this is shown below.
 
 ```bash
 @Test(timeout = 5000)
@@ -97,7 +74,7 @@ In this example, the timeout is set to 5000 milliseconds, but the testProtocolRe
 
 # Not Specified
 
-The category of not specified is a category that defines a test to not have a reason for flaky failure that is categorized within the four categories of network failure, randomness, timing, and concurrency. I had this category to show that all the tests will not fall into these four categories and although they make up a large majority of the tests, some tests can fail from events like an environment change needed. An example is shown below.
+The category of not specified is a category that defines a test to not have a reason for flaky failure that is categorized within the three categories of network failure, async timing, and concurrency. I had this category to show that all the tests will not fall into these four categories and although they make up a large majority of the tests, some tests can fail from events like an environment change needed. An example is shown below.
 
 ```bash
 import org.junit.Test;
