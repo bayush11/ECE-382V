@@ -8,6 +8,8 @@ The project I am working on is to find the root cause of NOD flaky tests. While 
 
 To solve this question, I will be conducting an empirical study that looks into these flaky tests and provides reasons and root causes for flakiness. Throughout my research, I have found five main categories into which these NOD flaky tests fall: Network, Concurrency, Timing, and Not Specified. I will clarify these categories and provide a few examples below.
 
+Also, when looking at the line in which the flakiness occurs, the name in the parenthesis is the function that the line is in. It is added for clarity.
+
 # Network
 
 The category network relative to NOD flaky tests has been defined to mean a flaky test that depends on unpredictable network connections or any unreliable external web services. To be more precise, network issues in an NOD flaky test mean that the test in particular has some dependence on an external network that is not guaranteed to always work. Since the question test depends on the specified unstable network, this allows for it to become flaky due to network issues. An example of this is when a test makes a call to an unstable API. Since the API won't always work properly, this leads to different results for each execution. An example is shown and explained below.
