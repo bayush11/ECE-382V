@@ -16,7 +16,7 @@
 |com.aliyun.tair.tests.tairbloom.TairBloomTest.bfaddException | https://github.com/alibaba/alibabacloud-tairjedis-sdk | f6215930b9e21a5252c95296d9924b3c4524d9f6 | 80 | (TairBloom.bfadd) | Network | Issues | Test|
 |com.aliyun.tair.tests.tairbloom.TairBloomTest.bfaddTest | https://github.com/alibaba/alibabacloud-tairjedis-sdk | f6215930b9e21a5252c95296d9924b3c4524d9f6 | 59 | (TairBloom.bfreserve) | Network | Issues | Test|
 |com.aliyun.tair.tests.tairbloom.TairBloomTest.bfcommandTest | https://github.com/alibaba/alibabacloud-tairjedis-sdk | f6215930b9e21a5252c95296d9924b3c4524d9f6 | 80 | (TairBloom.bfadd) | Network | Issues | Test|
-|com.aliyun.tair.tests.tairbloom.TairBloomTest.bfexistsException | https://github.com/alibaba/alibabacloud-tairjedis-sdk | f6215930b9e21a5252c95296d9924b3c4524d9f6 | 125 | (TairBloom.bfexists) | Network | Issues | Test|
+|com.aliyun.tair.tests.tairbloom.TairBloomTest.bfexistsException | https://github.com/alibaba/alibabacloud-tairjedis-sdk | f6215930b9e21a5252c95296d9924b3c4524d9f6 | 125 (TairBloom.bfexists) | Network | Issues | Test|
 |com.aliyun.tair.tests.tairbloom.TairBloomTest.bfinsert | https://github.com/alibaba/alibabacloud-tairjedis-sdk | f6215930b9e21a5252c95296d9924b3c4524d9f6 | 181 | (TairBloom.bfinsert) | Network | Issues | Test|
 |com.aliyun.tair.tests.tairbloom.TairBloomTest.bfinsertBinary | https://github.com/alibaba/alibabacloud-tairjedis-sdk | f6215930b9e21a5252c95296d9924b3c4524d9f6 | 192 | (TairBloom.bfinsert) | Network | Issues | Test|
 |com.aliyun.tair.tests.tairbloom.TairBloomTest.bfinsertException | https://github.com/alibaba/alibabacloud-tairjedis-sdk | f6215930b9e21a5252c95296d9924b3c4524d9f6 | 181 | (TairBloom.bfinsert) | Network | Issues | Test|
