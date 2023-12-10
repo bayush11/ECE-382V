@@ -5,7 +5,7 @@
 
 
 
-org.platformlambda.automation.tests.WebSocketTests.userChannelTest | https://github.com/Accenture/mercury | 6b744cdbb2206feca62848df92b3bf542f890be5 | 129, | 130, | 131 | Asynchronous | Timing | Source|
+org.platformlambda.automation.tests.WebSocketTests.userChannelTest | https://github.com/Accenture/mercury | 6b744cdbb2206feca62848df92b3bf542f890be5 | 129, 130, 131 | Asynchronous | Timing | Source|
 com.aliyun.tair.tests.tairbloom.TairBloomClusterTest.bfaddTest | https://github.com/alibaba/alibabacloud-tairjedis-sdk | f6215930b9e21a5252c95296d9924b3c4524d9f6 | 28 | (TairBloomCluster.bfreserve) | Network | Issues | Test|
 com.aliyun.tair.tests.tairbloom.TairBloomClusterTest.bfinsert | https://github.com/alibaba/alibabacloud-tairjedis-sdk | f6215930b9e21a5252c95296d9924b3c4524d9f6 | 76 | (TairBloomCluster.bfinsert) | Network | Issues | Test|
 com.aliyun.tair.tests.tairbloom.TairBloomClusterTest.bfinsertBinary | https://github.com/alibaba/alibabacloud-tairjedis-sdk | f6215930b9e21a5252c95296d9924b3c4524d9f6 | 82 | (TairBloomCluster.bfinsert) | Network | Issues | Test|
