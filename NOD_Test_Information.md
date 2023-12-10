@@ -9,9 +9,8 @@
 |com.aliyun.tair.tests.tairbloom.TairBloomClusterTest.bfinsertBinary | https://github.com/alibaba/alibabacloud-tairjedis-sdk | f6215930b9e21a5252c95296d9924b3c4524d9f6 | 82 (TairBloomCluster.bfinsert) | Network Issues | Test|
 |com.aliyun.tair.tests.tairbloom.TairBloomClusterTest.bfinsertTest | https://github.com/alibaba/alibabacloud-tairjedis-sdk | f6215930b9e21a5252c95296d9924b3c4524d9f6 | 90 (TairBloomCluster.bfinsert) | Network Issues | Test|
 |com.aliyun.tair.tests.tairbloom.TairBloomClusterTest.bfmaddTest | https://github.com/alibaba/alibabacloud-tairjedis-sdk | f6215930b9e21a5252c95296d9924b3c4524d9f6 | 28 (TairBloomCluster.bfreserve) | Network Issues | Test|
-|com.aliyun.tair.tests.tairbloom.TairBloomPipelineTest.bfaddPipelineTest | https://github.com/alibaba/alibabacloud-tairjedis-sdk | f6215930b9e21a5252c95296d9924b3c4524d9f6 | 36 (TairBloomPipelineTest) | Network | Issues | Test|
-|com.aliyun.tair.tests.tairbloom.TairBloomPipelineTest.bfmaddPipelineTest | https://github.com/alibaba/alibabacloud-tairjedis-sdk | f6215930b9e21a5252c95296d9924b3c4524d9f6 | 68 (TairBloomPipelineTest) | Network | Issues | Test|
-||
+|com.aliyun.tair.tests.tairbloom.TairBloomPipelineTest.bfaddPipelineTest | https://github.com/alibaba/alibabacloud-tairjedis-sdk | f6215930b9e21a5252c95296d9924b3c4524d9f6 | 36 (TairBloomPipelineTest) | Network Issues | Test|
+|com.aliyun.tair.tests.tairbloom.TairBloomPipelineTest.bfmaddPipelineTest | https://github.com/alibaba/alibabacloud-tairjedis-sdk | f6215930b9e21a5252c95296d9924b3c4524d9f6 | 68 (TairBloomPipelineTest) | Network Issues | Test|
 |com.aliyun.tair.tests.tairbloom.TairBloomTest.bfaddException | https://github.com/alibaba/alibabacloud-tairjedis-sdk | f6215930b9e21a5252c95296d9924b3c4524d9f6 | 80 (TairBloom.bfadd) | Network Issues | Test|
 |com.aliyun.tair.tests.tairbloom.TairBloomTest.bfaddTest | https://github.com/alibaba/alibabacloud-tairjedis-sdk | f6215930b9e21a5252c95296d9924b3c4524d9f6 | 59 (TairBloom.bfreserve) | Network Issues | Test|
 |com.aliyun.tair.tests.tairbloom.TairBloomTest.bfcommandTest | https://github.com/alibaba/alibabacloud-tairjedis-sdk | f6215930b9e21a5252c95296d9924b3c4524d9f6 | 80 (TairBloom.bfadd) | Network Issues | Test|
